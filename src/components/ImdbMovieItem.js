@@ -1,5 +1,5 @@
-export const ImdbMovieItem = ({ movie }) => {
-    return (<li key={movie.imdbID}>
+export const ImdbMovieItem = ({ movie, onSelectedId }) => {
+    return (<li key={movie.imdbID} onClick={() => onSelectedId(movie.imdbID)}>
         <img src={movie.Poster} alt={`${movie.Title} poster`} />
         <h3>{movie.Title}</h3>
         <div>

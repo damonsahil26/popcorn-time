@@ -1,4 +1,5 @@
-export const WatchedMovieItem = ({ movie }) => {
+export const WatchedMovieItem = ({ movie, onDeleteWatchedMovies }) => {
+    console.log(movie);
     return (
         <li key={movie.imdbID}>
             <img src={movie.Poster} alt={`${movie.Title} poster`} />
@@ -10,11 +11,15 @@ export const WatchedMovieItem = ({ movie }) => {
                 </p>
                 <p>
                     <span>🌟</span>
-                    <span>{movie.userRating}</span>
+                    <span>{movie.UserRatings}</span>
                 </p>
                 <p>
                     <span>⏳</span>
-                    <span>{movie.runtime} min</span>
+                    <span>{movie.Runtime}</span>
+                </p>
+
+                <p>
+                    <button className="btn-delete" onClick={() => onDeleteWatchedMovies(movie)}>X</button>
                 </p>
             </div>
         </li>

@@ -2,9 +2,9 @@ export const MovieSummary = ({ watched }) => {
     const average = (arr) =>
         arr.reduce((acc, cur, i, arr) => acc + cur / arr.length, 0);
 
-    const avgImdbRating = average(watched.map((movie) => movie.imdbRating));
-    const avgUserRating = average(watched.map((movie) => movie.userRating));
-    const avgRuntime = average(watched.map((movie) => movie.runtime));
+    const avgImdbRating = Math.round(average(watched.map((movie) => movie.imdbRating)));
+    const avgUserRating = Math.round(average(watched.map((movie) => movie.UserRatings)));
+    const avgRuntime = Math.round(average(watched.map((movie) => movie.Runtime.split("min")[0])));
     return (
         <div className="summary">
             <h2>Movies you watched</h2>
